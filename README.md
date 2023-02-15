@@ -1,40 +1,614 @@
 # Fake-Product-Identification-System
-In the current advancing world of technology, the global development of a product or technology always comes
-with risk factor such as counterfeiting and duplication, which can affect the company name, company revenue,
-and customer health. The basic idea of the project is to verify that the product purchased by the customer is
-fake or real. In comparison with blockchain we have traditional supply chain. Traditional supply chain provides
-centralized network where the data is in the hand of the company which provides the service or the products in
-the market, and they own the data so they can manipulate as per their wish so they are not secure.
-Counterfeiting of the product are produced to take advantage of the superior value of the imitated products. As
-mentioned, traditional supply chain provides centralized network whereas Blockchain provides decentralized
-data base, every transaction involving the data value for the product. This is done by creating a record whose
-authenticity can be verified by the entire community since blockchain runs by peer-to-peer network. In such a
-way manufacturer can use this system to provide genuine products to the customer. This will help to maintain
-the customer trust and to increase the brand value of the product in the market. In blockchain every block
-consists of data, hash and previous block hash. Data contains the relevant information and hash consists of the
-unique code. It is impossible to change data of any block since person changing the data requires to own the
-majority of the network. If we try to change the data of any block the hash will get changed. So, this becomes the
-major advantage over the traditional centralized architecture where the data in blockchain is immutable so that
-the customer who buys the product gets the genuine information of the product.
-System is maintaining Status of product i.e., Manufacturer of product, current owner of product, and history of
-owners, time stamp i.e., at what time product was updated and a QR code.
-Stage 1: Product Enrollment Process:
-Initially manufacturer will be the first owner of product.
-So, manufacturer will request administrator to add product on the network, at that time QR code will be
-generated. Administrator will enroll product and manufacturer on the network, and QR code is taken.
-Stage 2: Ship Product to Distributor:
-In the next step manufacturer will ship the product to distributor. When distributor receives product will scan
-the QR code and update his details on the network, about product ownership, time Stamp and date.
-Stage 3: Ship Product to Retailer:
-At this Stage, the retailer receives product from Distributor and scan QR code assigned to product using QR
-code scanner, and will update owner details of the product on the network.
-Stage 2: End User Authentication Process:
-At the end of the chain, customer will take the product, go to website and upload QR code over there, and
-customer will able to get all detail about product from manufacture to last retailer. And after getting details, it
-his question where to buy the product or not.
-The results of the project show that how the system work. It uses QR code for authenticating the product
-originality, if the scan QR code shows the details of the for the product which includes the description, product
-name, manufacturer name, company name, unique product id, and others then we can say that product is
-authentic.
-If by scanning the product QR code if it does not show any details the we can say that the data for the product
-does not present in the blockchain system and it has been counterfeited. So, we can say that the product is fake.
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800');
+
+@media (min-width: 500px) {
+  .col-sm-6 {
+    width: 50%;
+  }
+}
+html, body {
+  height: 100%;
+  min-height: 18em;
+}
+
+.frontend-side {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74452/website-code.png");
+}
+
+.uiux-side {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74452/website-post-its.png");
+}
+
+.split-pane {
+  padding-top: 1em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 50%;
+  min-height: 9em;
+  font-size: 2em;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+	font-weight:300;
+;
+}
+@media(min-width: 500px) {
+  .split-pane {
+    padding-top: 2em;
+    height: 100%;
+  }
+}
+.split-pane > div {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+}
+.split-pane > div .text-content {
+  line-height: 1.6em;
+  margin-bottom: 1em;
+}
+.split-pane > div .text-content .big {
+  font-size: 2em;
+}
+.split-pane > div img {
+  height: 1.3em;
+}
+@media (max-width: 500px) {
+  .split-pane > div img {
+    display:none;
+  }
+}
+.split-pane button, .split-pane a.button {
+  font-family: 'Open Sans', sans-serif;
+	font-weight:800;
+  background: none;
+  border: 1px solid white;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 15em;
+  padding: 0.7em;
+  font-size: 0.5em;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+	cursor: pointer;
+}
+.split-pane button:hover, .split-pane a.button:hover {
+  text-decoration: none;
+  background-color: white;
+  border-color: white;
+	cursor: pointer;
+}
+.uiux-side.split-pane button:hover, .split-pane a.button:hover {
+  color: violet;
+}
+.frontend-side.split-pane button:hover, .split-pane a.button:hover {
+  color: blue;
+}
+
+#split-pane-or {
+  font-size: 2em;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media (max-width: 925px) {
+  #split-pane-or {
+    top:15%;
+  }
+}
+#split-pane-or > div img {
+  height: 2.5em;
+}
+@media (max-width: 500px) {
+  #split-pane-or {
+    position: absolute;
+    top: 50px;
+  }
+  #split-pane-or > div img {
+    height:2em;
+  }
+}
+@media(min-width: 500px) {
+  #split-pane-or {
+    font-size: 3em;
+  }
+}
+.big {
+  font-size: 2em;
+}
+
+#slogan {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  text-align: center;
+  vertical-align: baseline;
+  top: 0.5em;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4em;
+}
+@media(min-width: 500px) {
+  #slogan {
+    top: 5%;
+    font-size: 1.8em;
+  }
+}
+#slogan img {
+  height: 0.7em;
+}
+.bold {
+	text-transform:uppercase;
+}
+.big {
+	font-weight:800;
+}
+
+</style>
+</head>
+<body>
+
+<div class='split-pane col-xs-12 col-sm-6 uiux-side'>
+        <div>
+          <img src='https://bit.ly/BCR-design'>
+          <div class='text-content'>
+            <div class="bold">Retailer</div>
+            <div class='big'>Registration</div>
+          </div>
+          <a class='button' href="http://localhost:8080/createRetailer">
+            REGISTER
+          </a>
+        </div>
+      </div>
+
+<div class='split-pane col-xs-12 col-sm-6 frontend-side'>
+        <div>
+          <img src='https://bit.ly/bcr-dev'>
+          <div class='text-content'>
+            <div class="bold">Generate</div>
+            <div class='big'>QR Code</div>
+          </div>
+          <a class='button' href="http://localhost:8080/createCodes">
+            GENERATE
+          </a>
+        </div>
+      </div>
+
+      <div id='split-pane-or'>
+        <div>
+          <img src='..\Pics\logo.png'>
+        </div>
+      </div>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="C:\Users\Thomas AJ\Desktop\node_try\style1.css" rel="stylesheet" type="text/css">
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <title>AuthentiFi</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+    <div class="container">
+    <a class="navbar-brand" href="http://localhost:8080/"  style="color:#1fa667">AuthentiFi</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080" style="color:#1fa667">Generate QR Code</a>
+            </li>
+        </ul>
+
+    </div>
+    </div>
+</nav>
+
+<main class="myform">
+    <div  class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                    <div class="card">
+                        <div style="background-color: #1fa667;color: #ffffff"  class="card-header">Retailer Registration</div>
+                        <div class="card-body">
+                            <form name="myform" onsubmit="return validform()" action="http://localhost:8080/retailerSignup" method="POST" >
+                                <div class="form-group row">
+                                    <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="name" class="form-control" name="name">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="email" class="form-control" name="email">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="location" class="col-md-4 col-form-label text-md-right">Location</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="location" class="form-control" name="location">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                    <div class="col-md-6">
+                                        <input type="password" id="password" class="form-control" name="password">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="pass" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+                                    <div class="col-md-6">
+                                        <input type="password" id="pass" class="form-control" name="pass">
+                                    </div>
+                                </div>
+
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                        Register
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="style1.css" rel="stylesheet" type="text/css">
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <title >AuthentiFi</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+    <div class="container">
+    <a class="navbar-brand" href="http://localhost:8080/" style="color:#1fa667">AuthentiFi</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/createRetailer" style="color:#1fa667">Retailer Registration</a>
+            </li>
+        </ul>
+
+    </div>
+    </div>
+</nav>
+
+<main class="myform">
+    <div  class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                    <div class="card">
+                        <div style="background-color: #1fa667;color: #ffffff"  class="card-header">Generate QR Codes</div>
+                        <div class="card-body">
+                            <form name="myform" onsubmit="return validform()" action="http://localhost:8080/QRCodeForManufacturer" method="POST" >
+
+                                <div class="form-group row">
+                                    <label for="brand" class="col-md-4 col-form-label text-md-right">Brand Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="brand" class="form-control" name="brand">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="model" class="col-md-4 col-form-label text-md-right">Model</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="model" class="form-control" name="model">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="description" class="form-control" name="description" style="height:100px">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="manufacturerName" class="col-md-4 col-form-label text-md-right">Manufacturer Name</label>
+                                    <div class="col-md-6">
+                                        <input type="type" id="manufacturerName" class="form-control" name="manufacturerName">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="manufacturerLocation" class="col-md-4 col-form-label text-md-right">Manufacturer Location</label>
+                                    <div class="col-md-6">
+                                        <input type="type" id="manufacturerLocation" class="form-control" name="manufacturerLocation">
+                                    </div>
+                                </div>
+
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                        Generate
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="C:\Users\Thomas AJ\Desktop\node_try\style1.css" rel="stylesheet" type="text/css">
+<!------ Include the above in your HEAD tag ---------->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <title>AuthentiFi</title>
+
+    <script type="text/javascript" src="qrcode.js"></script>
+    <style>
+            h2 {
+              text-align:center;
+            }
+            
+            p {
+              text-align:center;
+            }
+    </style>
+
+
+
+</head>
+<body> 
+<nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+    <div class="container">
+    <a class="navbar-brand" href="file:///C:/Users/Thomas%20AJ/Desktop/node_try/main.html#">AuthentiFi</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="file:///C:/Users/Thomas%20AJ/Desktop/node_try/main.html#">Home</a>
+                </li>
+            </ul>
+    </div> -->
+    </div>
+</nav>
+
+    <div  class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                    <div class="card">
+                        <div style="background-color: #1fa667;text-align:center;color: #ffffff"  class="card-header">Generated QR Code</div>
+                        <div class="card-body">
+                                <div class="container">
+                                <div class="row">
+                                    <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+                                        <div class="well details">  
+                                            <div class="col-sm-12">
+                                                <div class="col-xs-12 col-sm-8">
+                                                    <h2 style="text-decoration:underline;"justify-content-center>Andrew Smith</h2>
+                                                    <p justify-content-center><strong>Model: </strong>Senior Developer </p>
+                                                    <p justify-content-center><strong>Description: </strong>Semantics </p>
+                                                    <p><strong>Manufacturer Name: </strong>Data Visualization </p>
+                                                    <p><strong>Manufacturer Location: </strong>Data Visualization </p>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-4 col-lg-1 text-center">                        
+                                                    <figure>
+                                                            <div id="qrcode" style="width:500px; height:500px; margin-top:15px;"></div>
+
+                                                            <script type="text/javascript">
+                                                            function readTextFile(file)
+                                                            {
+                                                                var rawFile = new XMLHttpRequest();
+                                                                rawFile.open("GET", file, false);
+                                                                rawFile.onreadystatechange = function ()
+                                                                {
+                                                                    if(rawFile.readyState === 4)
+                                                                    {
+                                                                        if(rawFile.status === 200 || rawFile.status == 0)
+                                                                        {
+                                                                            var allText = rawFile.responseText;
+                                                                            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                                                                                text:allText,
+                                                                                width : 300,
+                                                                                height : 300
+                                                                            });
+                                                                        }
+                                                                    }
+                                                                }
+                                                                rawFile.send(null);
+                                                            }
+                                                            readTextFile("code.txt");
+                                                            </script>      
+                                                    </figure>
+                                                </div>
+                                            </div>                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>       
+                        </div>    
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html> 
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=password], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
