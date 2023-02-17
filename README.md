@@ -168,7 +168,7 @@ Website:
 + Implement our own tokens which can be sold to users so that they can purchase ownership of a product using tokens which helps in insurance processing. 
 
 ## Contributing <a name="contributing"></a>
-1. Fork it (<https://github.com/kylelobo/AuthentiFi/fork>)
+1. Fork it (<https://github.com/Pragati01234/Fake-Product-Identification-System>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
