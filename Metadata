@@ -1,0 +1,725 @@
+List the brew info --json --all output for all current Homebrew/homebrew-core formulae or Homebrew/homebrew-cask casks.
+
+GET https://formulae.brew.sh/api/formula.json
+GET https://formulae.brew.sh/api/cask.json
+Response
+[
+  ...
+  {
+    "name": "wget",
+    "full_name": "wget",
+    "tap": "homebrew/core",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Internet file retriever",
+    "license": "GPL-3.0-or-later",
+    "homepage": "https://www.gnu.org/software/wget/",
+    "versions": {
+      "stable": "1.21.3",
+      "head": "HEAD",
+      "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://ftp.gnu.org/gnu/wget/wget-1.21.3.tar.gz",
+        "tag": null,
+        "revision": null,
+        "checksum": "5726bb8bc5ca0f6dc7110f6416e4bb7019e2d2ff5bf93d1ca2ffcc6656f220e5"
+      },
+      "head": {
+        "url": "https://git.savannah.gnu.org/git/wget.git",
+        "branch": null
+      }
+    },
+    "revision": 1,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 1,
+        "root_url": "https://ghcr.io/v2/homebrew/core",
+        "files": {
+          "arm64_ventura": {
+            "cellar": "/opt/homebrew/Cellar",
+            "url": "https://ghcr.io/v2/homebrew/core/wget/blobs/sha256:7415a3b847237e0a981f2df42761578d6b6b285361c450c010219355bd1c0df2",
+            "sha256": "7415a3b847237e0a981f2df42761578d6b6b285361c450c010219355bd1c0df2"
+          },
+          "arm64_monterey": {
+            "cellar": "/opt/homebrew/Cellar",
+            "url": "https://ghcr.io/v2/homebrew/core/wget/blobs/sha256:ed959d9bd75bfac18aa823bd62c8e5f4736174fd183aee9ebaa913d0810dea36",
+            "sha256": "ed959d9bd75bfac18aa823bd62c8e5f4736174fd183aee9ebaa913d0810dea36"
+          },
+          "arm64_big_sur": {
+            "cellar": "/opt/homebrew/Cellar",
+            "url": "https://ghcr.io/v2/homebrew/core/wget/blobs/sha256:42233b960709325f6e4ec479eb1786379e1b3757b4b7641bdbbd8e6a058e1013",
+            "sha256": "42233b960709325f6e4ec479eb1786379e1b3757b4b7641bdbbd8e6a058e1013"
+          },
+          "ventura": {
+            "cellar": "/usr/local/Cellar",
+            "url": "https://ghcr.io/v2/homebrew/core/wget/blobs/sha256:0915596ebf9426fc9aad9307a6813ba35ac860e9dfa755741a23e9d446ac3b93",
+            "sha256": "0915596ebf9426fc9aad9307a6813ba35ac860e9dfa755741a23e9d446ac3b93"
+          },
+          "monterey": {
+            "cellar": "/usr/local/Cellar",
+            "url": "https://ghcr.io/v2/homebrew/core/wget/blobs/sha256:f97fc2639cd9d2d037c2bf1a94fa664ef2d81143ce8a1fb5b740ce2eb397889c",
+            "sha256": "f97fc2639cd9d2d037c2bf1a94fa664ef2d81143ce8a1fb5b740ce2eb397889c"
+          },
+          "big_sur": {
+            "cellar": "/usr/local/Cellar",
+            "url": "https://ghcr.io/v2/homebrew/core/wget/blobs/sha256:f85c6720bdabd86db32dd54837f577b709bc5de98896622a19f698f8a14e604f",
+            "sha256": "f85c6720bdabd86db32dd54837f577b709bc5de98896622a19f698f8a14e604f"
+          },
+          "x86_64_linux": {
+            "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+            "url": "https://ghcr.io/v2/homebrew/core/wget/blobs/sha256:738ec27b5b39877b8004096d9c3edd04ff814e18dd6f6afca89a2f5b4eeedcac",
+            "sha256": "738ec27b5b39877b8004096d9c3edd04ff814e18dd6f6afca89a2f5b4eeedcac"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "keg_only_reason": null,
+    "options": [],
+    "build_dependencies": [
+      "pkg-config"
+    ],
+    "dependencies": [
+      "libidn2",
+      "openssl@3"
+    ],
+    "test_dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [
+      {
+        "version": "1.21.3_1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "time": 1676414145,
+        "runtime_dependencies": [
+          {
+            "full_name": "libunistring",
+            "version": "1.1",
+            "declared_directly": false
+          },
+          {
+            "full_name": "gettext",
+            "version": "0.21.1",
+            "declared_directly": false
+          },
+          {
+            "full_name": "libidn2",
+            "version": "2.3.4",
+            "declared_directly": true
+          },
+          {
+            "full_name": "ca-certificates",
+            "version": "2023-01-10",
+            "declared_directly": false
+          },
+          {
+            "full_name": "openssl@3",
+            "version": "3.0.8",
+            "declared_directly": true
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "1.21.3_1",
+    "pinned": false,
+    "outdated": false,
+    "deprecated": false,
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null,
+    "tap_git_head": "eec9e20774f5398bd3513952bfca0ba4d73f29bf",
+    "variations": {
+      "x86_64_linux": {
+        "dependencies": [
+          "libidn2",
+          "openssl@3",
+          "util-linux"
+        ]
+      }
+    }
+  },
+  ...
+]
+Get formula metadata for a Homebrew/core formula
+Get the brew info --json --formula <formula> output for a single, current Homebrew/homebrew-core formula with extra keys containing analytics data and generation date.
+
+GET https://formulae.brew.sh/api/formula/${FORMULA}.json
+Variables
+${FORMULA}: the name of the formula, e.g. wget
+Response
+{
+  "name": "wget",
+  "full_name": "wget",
+  "tap": "homebrew/core",
+  "oldname": null,
+  "aliases": [],
+  "versioned_formulae": [],
+  "desc": "Internet file retriever",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://www.gnu.org/software/wget/",
+  "versions": {
+    "stable": "1.21.3",
+    "head": "HEAD",
+    "bottle": true
+  },
+  "urls": {
+    "stable": {
+      "url": "https://ftp.gnu.org/gnu/wget/wget-1.21.3.tar.gz",
+      "tag": null,
+      "revision": null,
+      "checksum": "5726bb8bc5ca0f6dc7110f6416e4bb7019e2d2ff5bf93d1ca2ffcc6656f220e5"
+    },
+    "head": {
+      "url": "https://git.savannah.gnu.org/git/wget.git",
+      "branch": null
+    }
+  },
+  "revision": 1,
+  "version_scheme": 0,
+  "bottle": {
+    "stable": {
+      "rebuild": 1,
+      "root_url": "https://ghcr.io/v2/homebrew/core",
+      "files": {
+        "arm64_ventura": {
+          "cellar": "/opt/homebrew/Cellar",
+          "url": "https://ghcr.io/v2/homebrew/core/wget/blobs/sha256:7415a3b847237e0a981f2df42761578d6b6b285361c450c010219355bd1c0df2",
+          "sha256": "7415a3b847237e0a981f2df42761578d6b6b285361c450c010219355bd1c0df2"
+        },
+        "arm64_monterey": {
+          "cellar": "/opt/homebrew/Cellar",
+          "url": "https://ghcr.io/v2/homebrew/core/wget/blobs/sha256:ed959d9bd75bfac18aa823bd62c8e5f4736174fd183aee9ebaa913d0810dea36",
+          "sha256": "ed959d9bd75bfac18aa823bd62c8e5f4736174fd183aee9ebaa913d0810dea36"
+        },
+        "arm64_big_sur": {
+          "cellar": "/opt/homebrew/Cellar",
+          "url": "https://ghcr.io/v2/homebrew/core/wget/blobs/sha256:42233b960709325f6e4ec479eb1786379e1b3757b4b7641bdbbd8e6a058e1013",
+          "sha256": "42233b960709325f6e4ec479eb1786379e1b3757b4b7641bdbbd8e6a058e1013"
+        },
+        "ventura": {
+          "cellar": "/usr/local/Cellar",
+          "url": "https://ghcr.io/v2/homebrew/core/wget/blobs/sha256:0915596ebf9426fc9aad9307a6813ba35ac860e9dfa755741a23e9d446ac3b93",
+          "sha256": "0915596ebf9426fc9aad9307a6813ba35ac860e9dfa755741a23e9d446ac3b93"
+        },
+        "monterey": {
+          "cellar": "/usr/local/Cellar",
+          "url": "https://ghcr.io/v2/homebrew/core/wget/blobs/sha256:f97fc2639cd9d2d037c2bf1a94fa664ef2d81143ce8a1fb5b740ce2eb397889c",
+          "sha256": "f97fc2639cd9d2d037c2bf1a94fa664ef2d81143ce8a1fb5b740ce2eb397889c"
+        },
+        "big_sur": {
+          "cellar": "/usr/local/Cellar",
+          "url": "https://ghcr.io/v2/homebrew/core/wget/blobs/sha256:f85c6720bdabd86db32dd54837f577b709bc5de98896622a19f698f8a14e604f",
+          "sha256": "f85c6720bdabd86db32dd54837f577b709bc5de98896622a19f698f8a14e604f"
+        },
+        "x86_64_linux": {
+          "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+          "url": "https://ghcr.io/v2/homebrew/core/wget/blobs/sha256:738ec27b5b39877b8004096d9c3edd04ff814e18dd6f6afca89a2f5b4eeedcac",
+          "sha256": "738ec27b5b39877b8004096d9c3edd04ff814e18dd6f6afca89a2f5b4eeedcac"
+        }
+      }
+    }
+  },
+  "keg_only": false,
+  "keg_only_reason": null,
+  "options": [],
+  "build_dependencies": [
+    "pkg-config"
+  ],
+  "dependencies": [
+    "libidn2",
+    "openssl@3"
+  ],
+  "test_dependencies": [],
+  "recommended_dependencies": [],
+  "optional_dependencies": [],
+  "uses_from_macos": [],
+  "requirements": [],
+  "conflicts_with": [],
+  "caveats": null,
+  "installed": [
+    {
+      "version": "1.21.3_1",
+      "used_options": [],
+      "built_as_bottle": true,
+      "poured_from_bottle": true,
+      "time": 1676414145,
+      "runtime_dependencies": [
+        {
+          "full_name": "libunistring",
+          "version": "1.1",
+          "declared_directly": false
+        },
+        {
+          "full_name": "gettext",
+          "version": "0.21.1",
+          "declared_directly": false
+        },
+        {
+          "full_name": "libidn2",
+          "version": "2.3.4",
+          "declared_directly": true
+        },
+        {
+          "full_name": "ca-certificates",
+          "version": "2023-01-10",
+          "declared_directly": false
+        },
+        {
+          "full_name": "openssl@3",
+          "version": "3.0.8",
+          "declared_directly": true
+        }
+      ],
+      "installed_as_dependency": false,
+      "installed_on_request": true
+    }
+  ],
+  "linked_keg": "1.21.3_1",
+  "pinned": false,
+  "outdated": false,
+  "deprecated": false,
+  "deprecation_date": null,
+  "deprecation_reason": null,
+  "disabled": false,
+  "disable_date": null,
+  "disable_reason": null,
+  "tap_git_head": "eec9e20774f5398bd3513952bfca0ba4d73f29bf",
+  "variations": {
+    "x86_64_linux": {
+      "dependencies": [
+        "libidn2",
+        "openssl@3",
+        "util-linux"
+      ]
+    }
+  },
+  "analytics": {
+    "install": {
+      "30d": {
+        "wget": 253611,
+        "wget --HEAD": 5
+      },
+      "90d": {
+        "wget": 577607,
+        "wget --HEAD": 17
+      },
+      "365d": {
+        "wget": 1815105,
+        "wget --HEAD": 51
+      }
+    },
+    "install_on_request": {
+      "30d": {
+        "wget": 252457,
+        "wget --HEAD": 5
+      },
+      "90d": {
+        "wget": 574872,
+        "wget --HEAD": 17
+      },
+      "365d": {
+        "wget": 1805831,
+        "wget --HEAD": 51
+      }
+    },
+    "build_error": {
+      "30d": {
+        "wget": 15,
+        "wget --HEAD": 4
+      }
+    }
+  },
+  "analytics-linux": {
+    "install": {
+      "30d": {
+        "wget": 1693
+      },
+      "90d": {
+        "wget": 4209
+      },
+      "365d": {
+        "wget": 15062
+      }
+    },
+    "install_on_request": {
+      "30d": {
+        "wget": 1643
+      },
+      "90d": {
+        "wget": 4095
+      },
+      "365d": {
+        "wget": 14645
+      }
+    },
+    "build_error": {
+      "30d": {
+        "wget": 0
+      }
+    }
+  },
+  "generated_date": "2023-02-17"
+}
+Get cask metadata for a Homebrew/cask cask
+Get the brew info --json=v2 --cask <cask> JSON output for a single, current Homebrew/homebrew-cask cask with extra keys containing analytics data and generation date.
+
+GET https://formulae.brew.sh/api/cask/${FORMULA}.json
+Variables
+${FORMULA}: the name of the formula, e.g. docker
+Response
+{
+  "token": "docker",
+  "full_token": "docker",
+  "tap": "homebrew/cask",
+  "name": [
+    "Docker Desktop",
+    "Docker Community Edition",
+    "Docker CE"
+  ],
+  "desc": "App to build and share containerized applications and microservices",
+  "homepage": "https://www.docker.com/products/docker-desktop",
+  "url": "https://desktop.docker.com/mac/main/amd64/95914/Docker.dmg",
+  "appcast": null,
+  "version": "4.16.2,95914",
+  "versions": {
+    "catalina": "4.15.0,93002",
+    "mojave": "4.15.0,93002",
+    "high_sierra": "4.15.0,93002",
+    "sierra": "4.15.0,93002",
+    "el_capitan": "4.15.0,93002"
+  },
+  "installed": null,
+  "outdated": false,
+  "sha256": "22eecb8ea07f10892d81cde07d614fb8b342163106133a75c4280a8e28787643",
+  "artifacts": [
+    {
+      "uninstall": [
+        {
+          "delete": [
+            "/Library/PrivilegedHelperTools/com.docker.vmnetd",
+            "/usr/local/bin/com.docker.cli",
+            "/usr/local/bin/docker-compose-v1",
+            "/usr/local/bin/docker-compose",
+            "/usr/local/bin/docker-credential-desktop",
+            "/usr/local/bin/docker-credential-ecr-login",
+            "/usr/local/bin/docker-credential-osxkeychain",
+            "/usr/local/bin/docker",
+            "/usr/local/bin/hub-tool",
+            "/usr/local/bin/hyperkit",
+            "/usr/local/bin/kubectl.docker",
+            "/usr/local/bin/kubectl",
+            "/usr/local/bin/notary",
+            "/usr/local/bin/vpnkit",
+            "$HOMEBREW_PREFIX/share/zsh/site-functions/_docker",
+            "$HOMEBREW_PREFIX/share/zsh/site-functions/_docker_compose",
+            "$HOMEBREW_PREFIX/share/fish/vendor_completions.d/docker.fish",
+            "$HOMEBREW_PREFIX/share/fish/vendor_completions.d/docker-compose.fish",
+            "$HOMEBREW_PREFIX/etc/bash_completion.d/docker",
+            "$HOMEBREW_PREFIX/etc/bash_completion.d/docker-compose"
+          ],
+          "launchctl": [
+            "com.docker.helper",
+            "com.docker.socket",
+            "com.docker.vmnetd"
+          ],
+          "quit": "com.docker.docker"
+        }
+      ]
+    },
+    {
+      "app": [
+        "Docker.app"
+      ]
+    },
+    {
+      "binary": [
+        "$APPDIR/Docker.app/Contents/Resources/etc/docker-compose.bash-completion",
+        {
+          "target": "$HOMEBREW_PREFIX/etc/bash_completion.d/docker-compose"
+        }
+      ]
+    },
+    {
+      "binary": [
+        "$APPDIR/Docker.app/Contents/Resources/etc/docker.zsh-completion",
+        {
+          "target": "$HOMEBREW_PREFIX/share/zsh/site-functions/_docker"
+        }
+      ]
+    },
+    {
+      "binary": [
+        "$APPDIR/Docker.app/Contents/Resources/etc/docker.fish-completion",
+        {
+          "target": "$HOMEBREW_PREFIX/share/fish/vendor_completions.d/docker.fish"
+        }
+      ]
+    },
+    {
+      "binary": [
+        "$APPDIR/Docker.app/Contents/Resources/etc/docker-compose.fish-completion",
+        {
+          "target": "$HOMEBREW_PREFIX/share/fish/vendor_completions.d/docker-compose.fish"
+        }
+      ]
+    },
+    {
+      "binary": [
+        "$APPDIR/Docker.app/Contents/Resources/etc/docker-compose.zsh-completion",
+        {
+          "target": "$HOMEBREW_PREFIX/share/zsh/site-functions/_docker_compose"
+        }
+      ]
+    },
+    {
+      "binary": [
+        "$APPDIR/Docker.app/Contents/Resources/etc/docker.bash-completion",
+        {
+          "target": "$HOMEBREW_PREFIX/etc/bash_completion.d/docker"
+        }
+      ]
+    },
+    {
+      "zap": [
+        {
+          "trash": [
+            "/usr/local/bin/docker-compose.backup",
+            "/usr/local/bin/docker.backup",
+            "~/.docker",
+            "~/Library/Application Scripts/com.docker.helper",
+            "~/Library/Application Support/com.bugsnag.Bugsnag/com.docker.docker",
+            "~/Library/Application Support/Docker Desktop",
+            "~/Library/Caches/com.docker.docker",
+            "~/Library/Caches/com.plausiblelabs.crashreporter.data/com.docker.docker",
+            "~/Library/Caches/KSCrashReports/Docker",
+            "~/Library/Containers/com.docker.docker",
+            "~/Library/Containers/com.docker.helper",
+            "~/Library/Group Containers/group.com.docker",
+            "~/Library/HTTPStorages/com.docker.docker.binarycookies",
+            "~/Library/Logs/Docker Desktop",
+            "~/Library/Preferences/com.docker.docker.plist",
+            "~/Library/Preferences/com.electron.docker-frontend.plist",
+            "~/Library/Preferences/com.electron.dockerdesktop.plist",
+            "~/Library/Saved Application State/com.electron.docker-frontend.savedState",
+            "~/Library/Saved Application State/com.electron.dockerdesktop.savedState"
+          ],
+          "rmdir": [
+            "~/Library/Caches/com.plausiblelabs.crashreporter.data",
+            "~/Library/Caches/KSCrashReports"
+          ]
+        }
+      ]
+    }
+  ],
+  "caveats": null,
+  "depends_on": {
+    "macos": {
+      ">=": [
+        "10.15"
+      ]
+    }
+  },
+  "conflicts_with": {
+    "formula": [
+      "docker",
+      "docker-completion",
+      "docker-compose",
+      "docker-compose-completion",
+      "docker-credential-helper-ecr",
+      "hyperkit",
+      "kubernetes-cli"
+    ]
+  },
+  "container": null,
+  "auto_updates": true,
+  "tap_git_head": "48a2cb17e79b3322bb3970eb4a5b16e3b9dd4671",
+  "languages": [],
+  "variations": {
+    "arm64_ventura": {
+      "url": "https://desktop.docker.com/mac/main/arm64/95914/Docker.dmg",
+      "sha256": "838eabe6cc42fe7e4be2cdb4d73924c61fc7982366dac2a9467793845851cb2e"
+    },
+    "arm64_monterey": {
+      "url": "https://desktop.docker.com/mac/main/arm64/95914/Docker.dmg",
+      "sha256": "838eabe6cc42fe7e4be2cdb4d73924c61fc7982366dac2a9467793845851cb2e"
+    },
+    "arm64_big_sur": {
+      "url": "https://desktop.docker.com/mac/main/arm64/95914/Docker.dmg",
+      "sha256": "838eabe6cc42fe7e4be2cdb4d73924c61fc7982366dac2a9467793845851cb2e"
+    },
+    "catalina": {
+      "url": "https://desktop.docker.com/mac/main/amd64/93002/Docker.dmg",
+      "version": "4.15.0,93002",
+      "sha256": "bee41d646916e579b16b7fae014e2fb5e5e7b5dbaf7c1949821fd311d3ce430b"
+    },
+    "mojave": {
+      "url": "https://desktop.docker.com/mac/main/amd64/93002/Docker.dmg",
+      "version": "4.15.0,93002",
+      "sha256": "bee41d646916e579b16b7fae014e2fb5e5e7b5dbaf7c1949821fd311d3ce430b"
+    },
+    "high_sierra": {
+      "url": "https://desktop.docker.com/mac/main/amd64/93002/Docker.dmg",
+      "version": "4.15.0,93002",
+      "sha256": "bee41d646916e579b16b7fae014e2fb5e5e7b5dbaf7c1949821fd311d3ce430b"
+    },
+    "sierra": {
+      "url": "https://desktop.docker.com/mac/main/amd64/93002/Docker.dmg",
+      "version": "4.15.0,93002",
+      "sha256": "bee41d646916e579b16b7fae014e2fb5e5e7b5dbaf7c1949821fd311d3ce430b"
+    },
+    "el_capitan": {
+      "url": "https://desktop.docker.com/mac/main/amd64/93002/Docker.dmg",
+      "version": "4.15.0,93002",
+      "sha256": "bee41d646916e579b16b7fae014e2fb5e5e7b5dbaf7c1949821fd311d3ce430b"
+    }
+  },
+  "analytics": {
+    "install": {
+      "30d": {
+        "docker": 25163
+      },
+      "90d": {
+        "docker": 67779
+      },
+      "365d": {
+        "docker": 309913
+      }
+    }
+  },
+  "generated_date": "2023-02-17"
+}
+Analytics
+List one category of analytics events
+List all analytics events for a specified category over a number of days, ordered by event frequency count. This is the data source for brew info --analytics.
+
+GET https://formulae.brew.sh/api/analytics/${CATEGORY}/${DAYS}.json
+GET https://formulae.brew.sh/api/analytics-linux/${CATEGORY}/${DAYS}.json
+Variables
+${CATEGORY}: the analytics event category, i.e.
+install: the installation of all formulae
+install-on-request: the requested installation of all formulae (i.e. not as a dependency of other formulae)
+cask-install: the installation of all casks
+only available under /analytics/
+build-error: the installation failure of all formulae
+os-version: the macOS version of all machines that have submitted an event
+only available under /analytics/
+${DAYS}: the number of days of analytics events, i.e.
+30d: 30 days
+90d: 90 days
+365d: 365 days
+Response
+{
+  "category": "install",
+  "total_items": 15251,
+  "start_date": "2023-01-18",
+  "end_date": "2023-02-17",
+  "total_count": 54146278,
+  "items": [
+    ...
+    {
+      "number": 46,
+      "formula": "wget",
+      "count": "253,611",
+      "percent": "0.47"
+    },
+    ...
+    {
+      "number": 9044,
+      "formula": "wget --HEAD",
+      "count": "5",
+      "percent": "0"
+    },
+    ...
+  ]
+}
+List analytics events for all Homebrew/core formulae
+List all the Homebrew/homebrew-core formulae’s analytics events for a specified category over a number of days, grouped by formula name. This is the data source for brew info --analytics --formula <formula>.
+
+GET https://formulae.brew.sh/api/analytics/${CATEGORY}/homebrew-core/${DAYS}.json
+GET https://formulae.brew.sh/api/analytics-linux/${CATEGORY}/homebrew-core/${DAYS}.json
+Variables
+${CATEGORY}: the analytics event category, i.e.
+install: the installation of all core formulae
+install-on-request: the requested installation of all core formulae (i.e. not as a dependency of other formulae)
+build-error: the installation failure of all core formulae
+only ${DAYS}: 30d (30 days) is available
+${DAYS}: the number of days of analytics events, i.e.
+30d: 30 days
+90d: 90 days
+365d: 365 days
+Response
+{
+  "category": "install",
+  "total_items": 6909,
+  "start_date": "2023-01-18",
+  "end_date": "2023-02-17",
+  "total_count": 53337433,
+  "formulae": {
+    ...
+    "wget": [
+      {
+        "formula": "wget",
+        "count": "253,611"
+      },
+      {
+        "formula": "wget --HEAD",
+        "count": "5"
+      },
+      ...
+    ],
+    ...
+  }
+}
+List analytics events for all Homebrew/cask casks
+List all the Homebrew/homebrew-cask cask’s analytics events for the cask-install category over a number of days, grouped by cask token. This is the data source for brew info --analytics --cask <cask>.
+
+GET https://formulae.brew.sh/api/analytics/cask-install/homebrew-cask/${DAYS}.json
+Variables
+${DAYS}: the number of days of analytics events, i.e.
+30d: 30 days
+90d: 90 days
+365d: 365 days
+Response
+{
+  "category": "cask_install",
+  "total_items": 6721,
+  "start_date": "2023-01-18",
+  "end_date": "2023-02-17",
+  "total_count": 1085723,
+  "formulae": {
+    ...
+    "docker": [
+      {
+        "cask": "docker",
+        "count": "25,163"
+      }
+    ],
+    "docker-edge": [
+      {
+        "cask": "docker-edge",
+        "count": "13"
+      }
+    ],
+    "docker-toolbox": [
+      {
+        "cask": "docker-toolbox",
+        "count": "145"
+      }
+    ],
+    ...
+  }
+}
