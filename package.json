@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
- 
-@Pragati01234 
-kylelobo
-/
-AuthentiFi
-Public
-Fork your own copy of kylelobo/AuthentiFi
-Code
-Issues
-2
-Pull requests
-6
-Actions
-Projects
-Security
-Insights
-Beta Try the new code view
-AuthentiFi/package.json
-@kylelobo
-kylelobo Updated dependencies
-Latest commit 030c91c on Jan 5, 2019
- History
- 1 contributor
-42 lines (42 sloc)  945 Bytes
 
 {
   "name": "authentifi",
@@ -72,18 +41,4 @@ Latest commit 030c91c on Jan 5, 2019
     "web3": "^0.20.6"
   }
 }
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-AuthentiFi/package.json at master · kylelobo/AuthentiFi
+
